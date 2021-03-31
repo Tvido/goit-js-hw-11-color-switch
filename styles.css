@@ -1,5 +1,6 @@
-.btn {
-  margin: 20px;
+.contaiter {
+  display: flex;
+  justify-content: center;
 }
 
 .btn {
@@ -9,6 +10,7 @@
 
   width: 100px;
   height: 40px;
+  margin: 20px;
 
   border: 2px transparent;
   border-radius: 20px;
