@@ -11,27 +11,34 @@ const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const maxNumber = colors.length-1;
+const colorsLength = colors.length-1;
 const startBtnRef = document.querySelector('[data-action=start]');
 const stopBtnRef = document.querySelector('[data-action=stop]');
 
 let timeoutId = null;
 let switchBg = false;
 
-const startBtnClick = () => {
-  if (switchBg) {
-    return;
-  }
-
-  switchBg = true;
-  
-  timeoutId = setInterval(() => {
-    const randomNum = randomIntegerFromInterval(0, maxNumber);
-    document.body.style.backgroundColor = colors[randomNum];
-  }, 1000);
+function switchColor() {
+  const randomNum = randomIntegerFromInterval(0, colorsLength);
+  document.body.style.backgroundColor = colors[randomNum];
 };
 
-const stopBtnClick = () => {
+function startBtnClick() {
+  timeoutId = setInterval(switchColor, 1000);
+};
+
+// #2
+// const startBtnClick = () => {
+//   if (switchBg) {
+//     return;
+//   };
+//   switchBg = true;
+//   timeoutId = setInterval(() => {
+//     switchColor();
+//   }, 1000);
+// };
+
+function stopBtnClick() {
   clearInterval(timeoutId);
   switchBg = false;
 };
