@@ -24,6 +24,10 @@ function switchColor() {
 };
 
 function startBtnClick() {
+  if (switchBg) {
+    return;
+  };
+  switchBg = true;
   timeoutId = setInterval(switchColor, 1000);
 };
 
