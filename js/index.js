@@ -31,17 +31,6 @@ function startBtnClick() {
   timeoutId = setInterval(switchColor, 1000);
 };
 
-// #2
-// const startBtnClick = () => {
-//   if (switchBg) {
-//     return;
-//   };
-//   switchBg = true;
-//   timeoutId = setInterval(() => {
-//     switchColor();
-//   }, 1000);
-// };
-
 function stopBtnClick() {
   clearInterval(timeoutId);
   switchBg = false;
